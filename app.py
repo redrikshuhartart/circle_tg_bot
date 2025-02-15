@@ -79,10 +79,7 @@ def send_file_to_telegram(chat_id, file_path, caption=None, parse_mode=None):
     response = requests.post(url, data=data, files=files)
     
     print(response.json())
-    
-# @dp.message_handler(commands="start")
-# async def start_func(msg: Message):
-#     await msg.answer("Привет! Отправь мне видео в квадратном формате, а я тебе отправлю кружок")
+
 
 @dp.message_handler(content_types=ContentTypes.VIDEO)
 async def send_videonote(msg: Message):
